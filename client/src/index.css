@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "Josefin";
+  src: url('./assets/fonts/JosefinSansRegular-x3LYV.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: "JosefinBold";
+  src: url('./assets/fonts/JosefinSansBold-OVA7o.ttf') format("truetype");
+}
+
+* {  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Josefin', sans-serif;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}

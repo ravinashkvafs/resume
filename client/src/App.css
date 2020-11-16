@@ -1,0 +1,159 @@
+@import './assets/styles/palette.css';
+
+.container {  
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-primary-dark);
+  height: 100vh;
+  cursor: url("./assets/icons/cursor.png"), auto;
+  overflow-y: hidden;
+}
+
+.side-menu {
+  flex: 0.06;
+  height: 75vh;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  /* border-right: 1px solid var(--color-primary-dark); */
+}
+
+.menus {
+  height: 86%;
+  /* display: flex; */
+  /* flex: 1; */
+  /* flex-direction: column;
+  justify-content: flex-start; */
+  /* align-items: center; */
+}
+
+.menu-bottom {
+  height: 14%;
+  display: flex;
+  flex: 1;
+  background-color: var(--color-tertiary);
+}
+
+.pic-section {
+  flex: 0.25;
+  height: 87vh;
+  background-image: linear-gradient(to right, rgba(29,29,29,0.8), rgba(0,0,0,0), rgba(29,29,29,0.8)),
+                    linear-gradient(to top, rgba(29,29,29,0.8), rgba(0,0,0,0), rgba(29,29,29,0)),
+                    url('./assets/images/avinash.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* box-shadow: inset 0 0 150px rgba(10, 10, 10, 0.5); */
+  box-shadow: 0px 0px 50px 5px rgba(10, 10, 10, 0.5);
+  z-index: 1;
+  overflow: hidden;
+}
+
+.pic-section > .content {
+  height: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 2rem;
+}
+
+.pic-section > .content > .name,.desig,.social-links {
+  text-align: center;
+  width: 100%;
+  padding: 0.7rem 0.5rem;
+  font-family: 'JosefinBold', sans-serif;
+}
+
+.pic-section > .content > .name {
+  font-size: 2.2rem;
+  color: white;  
+}
+
+.pic-section > .content > .desig {
+  font-size: 1.2rem;
+  color: var(--color-tertiary);
+}
+
+.pic-section > .content > .social-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.pic-section > .content > .social-links > .social1 {
+  background-image: url('./assets/icons/linkedin.ico');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 1.1rem;
+  width: 1.1rem;
+}
+
+.section {
+  flex: 0.5;
+  height: 75vh;
+  background-color: var(--color-primary);
+  padding: 3.5rem 2rem;
+}
+
+.tab {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  /* padding: 1.3rem 1.5rem; */
+  /* transition: all 5s ease-in; */
+  margin: 0.2rem auto;
+  padding: 0.5rem;
+}
+
+.tab > .material-icons:hover {
+  color: var(--color-tertiary) !important;
+  border: 1px solid var(--color-tertiary);
+  border-radius: 100%;
+}
+
+.active-tab {
+  color: var(--color-tertiary) !important;
+}
+
+.material-icons {
+  font-size: 2rem;
+  color: var(--color-secondary);
+  transition: all .7s ease-in-out;
+  border: 1px solid var(--color-primary);
+  padding: 0.7rem;
+}
+
+/* .material-icons:hover { */
+  /* font-size: 2.5rem; */
+/* } */
+
+.menu-bottom > .material-icons {
+  color: var(--color-primary) !important;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 4rem;
+  text-transform: lowercase;
+  font-family: 'JosefinBold', sans-serif;
+  color: white;
+}
+
+.sub-title {
+  font-size: 1.3rem;
+  color: var(--color-tertiary);
+}
+
+.text {
+  font-size: 1.1rem;
+  color: var(--color-quadinary);
+  line-height: 1.6rem;
+}
