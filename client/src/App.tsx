@@ -57,8 +57,13 @@ function App() {
 
       <div className="section">
 
-        {tab == 'profile' && <About />}
+        {tab === 'profile' && <div className="sub">
+          <About />
+        </div>}
 
+        {tab === 'contact' && <div className="sub">
+          <About />
+        </div>}
 
       </div>
 

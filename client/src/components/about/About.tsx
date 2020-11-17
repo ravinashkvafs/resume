@@ -17,7 +17,7 @@ export default function About() {
       </div>
 
       <span className="text">
-        Passionate self taught full-stack Javascript developer with an aim to beat former "best-yets".  I'm an absolute geek and love geeking out on JavaScript things.
+        Passionate self-taught fullstack Javascript developer with an aim to beat former "best-yets".  I'm an absolute geek and love geeking out on JavaScript things.
         <br /><br />
         Values and Strengths I hold high are Authenticity, Meticulous, Discipline, Reliability, Responsibility and Helping other achieve their success.
       </span>

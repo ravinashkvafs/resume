@@ -157,3 +157,26 @@
   color: var(--color-quadinary);
   line-height: 1.6rem;
 }
+
+@keyframes FadeIn { 
+  0% {
+    opacity: 0;
+    transform: scale(.9);
+  }
+
+  85% {
+    opacity: 1;
+    transform: scale(1.01);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.section .sub {
+  float: left;
+  margin: 20px;
+  animation: FadeIn .5s linear;
+  animation-fill-mode: both;
+  animation-delay: 0s;
+}
