@@ -1,10 +1,11 @@
 import React from 'react';
 import './About.css';
+import '../../assets/styles/shared.css';
 
 export default function About() {
 
   return (
-    <div>
+    <div className="VarticalContainer">
 
       <span className="title">About Me</span>
 

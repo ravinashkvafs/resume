@@ -1,0 +1,29 @@
+.exp-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-height: 2rem;
+    margin-top: 1rem;
+    color: white;
+}
+
+.exp-right {
+    align-items: flex-end;
+    text-align: right;
+}
+
+.exp-left {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.exp-container > .org, .duration, .designation {
+    padding: 0.6rem 0;
+}
+
+.exp-container > .duration {
+    padding: 0.3rem 0.7rem;
+    color: var(--color-primary) !important;
+    background-color: var(--color-tertiary) !important;
+}

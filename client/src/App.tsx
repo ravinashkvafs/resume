@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import './App.css';
 import About from './components/about/About';
+import Contact from './components/contact/Contact';
+import Journey from './components/journey/Journey';
+import School from './components/school/School';
 
 function Tab({ tab, active, setTab, icon }: any) {
   return (
     <span className="tab" onClick={() => setTab(tab)}>
-      <i className={`material-icons ${tab === active ? 'active-tab' : ''}`}>{icon}</i>
+      <i className={`material-icons menu-icon ${tab === active ? 'active-tab' : ''}`}>{icon}</i>
     </span>
   )
 }
@@ -23,17 +26,19 @@ function App() {
 
           <Tab tab={'profile'} active={tab} setTab={setTab} icon={'person'} />
 
-          <Tab tab={'contact'} active={tab} setTab={setTab} icon={'call'} />
-
           <Tab tab={'work'} active={tab} setTab={setTab} icon={'work'} />
 
+          <Tab tab={'school'} active={tab} setTab={setTab} icon={'school'} />
+
           <Tab tab={'skill'} active={tab} setTab={setTab} icon={'directions_walk'} />
+
+          <Tab tab={'contact'} active={tab} setTab={setTab} icon={'call'} />
 
         </div>
 
         <div className="menu-bottom">
 
-          <i className={`material-icons`}>cloud_download</i>
+          <i className={`material-icons menu-icon`}>cloud_download</i>
 
         </div>
 
@@ -57,13 +62,13 @@ function App() {
 
       <div className="section">
 
-        {tab === 'profile' && <div className="sub">
-          <About />
-        </div>}
+        {tab === 'profile' && <div className="sub">          <About />        </div>}
 
-        {tab === 'contact' && <div className="sub">
-          <About />
-        </div>}
+        {tab === 'contact' && <div className="sub">          <Contact />        </div>}
+
+        {tab === 'work' && <div className="sub">          <Journey />        </div>}
+
+        {tab === 'school' && <div className="sub">          <School />        </div>}
 
       </div>
 
