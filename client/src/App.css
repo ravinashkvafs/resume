@@ -8,7 +8,6 @@
   background-color: var(--color-primary-dark);
   height: 100vh;
   cursor: url("./assets/icons/cursor.png"), auto;
-  overflow-y: hidden;
 }
 
 .side-menu {
@@ -96,7 +95,10 @@
   flex: 0.5;
   height: 75vh;
   background-color: var(--color-primary);
-  padding: 2rem;
+  padding: 1.7rem !important;
+  overflow: hidden;
+  overflow-y: scroll;
+  /* box-shadow: 0 0 10rem 6rem var(--color-primary) inset; */
 }
 
 .tab {
@@ -171,7 +173,7 @@
 .section .sub {
   width: 100%;
   height: 100%;
-  float: left;
+  text-align: left;
   padding: 20px;
   animation: FadeIn .5s linear;
   animation-fill-mode: both;

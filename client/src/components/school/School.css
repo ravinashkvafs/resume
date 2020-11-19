@@ -2,35 +2,40 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
+    width: 48%;
     min-height: 2rem;
     margin-top: 1rem;
     color: white;
 }
 
-.school-right {
+.school-left {
+    margin-left: 0;
     align-items: flex-end;
     text-align: right;
 }
 
-.school-left {
+.school-right {
+    margin-left: 52%;
     align-items: flex-start;
     text-align: left;
 }
 
 .school-container > .org, .duration, .school, .class {
-    padding: 0.6rem 0;
+    padding: 0.3rem 0;
 }
 
 .school-container > .duration {
+    font-size: 0.8rem;
     padding: 0.3rem 0;
     color: var(--color-tertiary) !important;
     background-color: var(--color-primary) !important;
 }
 
 .school-container > .class {
+    font-size: 0.8rem;
+    font-weight: bold;
     margin-bottom: 0.3rem;
-    padding: 0.3rem 0.7rem;
+    padding: 0.25rem 0.6rem;
     color: var(--color-primary) !important;
     background-color: var(--color-tertiary) !important;
 }

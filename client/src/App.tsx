@@ -36,7 +36,7 @@ function App() {
 
         </div>
 
-        <div className="menu-bottom">
+        <div className="menu-bottom" onClick={() => null}>
 
           <i className={`material-icons menu-icon`}>cloud_download</i>
 
@@ -62,13 +62,21 @@ function App() {
 
       <div className="section">
 
-        {tab === 'profile' && <div className="sub">          <About />        </div>}
+        {tab === 'profile' &&
+          <div className="sub">          <About />        </div>
+        }
 
-        {tab === 'contact' && <div className="sub">          <Contact />        </div>}
+        {tab === 'contact' &&
+          <div className="sub">          <Contact />        </div>
+        }
 
-        {tab === 'work' && <div className="sub">          <Journey />        </div>}
+        {tab === 'work' &&
+          <div className="sub">          <Journey />        </div>
+        }
 
-        {tab === 'school' && <div className="sub">          <School />        </div>}
+        {tab === 'school' &&
+          <div className="sub">          <School />        </div>
+        }
 
       </div>
 

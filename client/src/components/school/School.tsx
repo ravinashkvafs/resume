@@ -28,11 +28,11 @@ export default function School() {
   return (
     <div className="VarticalContainer">
 
-      <span className="title" style={{ marginTop: 30 }}>Education</span>
+      <span className="title">Education</span>
 
       {educations.map((d, di) => {
         return (
-          <div className={`school-container ${di % 2 == 0 ? 'school-left' : 'school-right'}`}>
+          <div key={`${di}:${d['duration']}`} className={`school-container ${di % 2 === 0 ? 'school-left' : 'school-right'}`}>
 
             <span className="org">{d['school'] || ''}</span>
 
