@@ -10,6 +10,18 @@
   cursor: url("./assets/icons/cursor.png"), auto;
 }
 
+.incompatible-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-size: 1.5rem;
+  padding: 2rem;
+}
+
 .side-menu {
   flex: 0.06;
   height: 75vh;
@@ -178,4 +190,24 @@
   animation: FadeIn .5s linear;
   animation-fill-mode: both;
   animation-delay: 0s;
+}
+
+@media only screen and (max-width: 900px) {
+  .section, .pic-section, .menus, .side-menu {
+    flex: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+  }
+}
+
+@media only screen and (min-width: 901px) {
+  .incompatible-section {
+    flex: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+  }
 }

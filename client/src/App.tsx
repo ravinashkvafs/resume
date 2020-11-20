@@ -4,6 +4,7 @@ import About from './components/about/About';
 import Contact from './components/contact/Contact';
 import Journey from './components/journey/Journey';
 import School from './components/school/School';
+import Skill from './components/skill/Skill';
 
 function Tab({ tab, active, setTab, icon }: any) {
   return (
@@ -20,6 +21,10 @@ function App() {
   return (
     <div className="container">
 
+      <div className="incompatible-section">
+        Sorry!<br /><br />This requires bigger screen!
+      </div>
+
       <div className="side-menu">
 
         <div className="menus">
@@ -30,7 +35,7 @@ function App() {
 
           <Tab tab={'school'} active={tab} setTab={setTab} icon={'school'} />
 
-          <Tab tab={'skill'} active={tab} setTab={setTab} icon={'directions_walk'} />
+          <Tab tab={'skill'} active={tab} setTab={setTab} icon={'person_search'} />
 
           <Tab tab={'contact'} active={tab} setTab={setTab} icon={'call'} />
 
@@ -66,16 +71,20 @@ function App() {
           <div className="sub">          <About />        </div>
         }
 
-        {tab === 'contact' &&
-          <div className="sub">          <Contact />        </div>
-        }
-
         {tab === 'work' &&
           <div className="sub">          <Journey />        </div>
         }
 
         {tab === 'school' &&
           <div className="sub">          <School />        </div>
+        }
+
+        {tab === 'skill' &&
+          <div className="sub">          <Skill />        </div>
+        }
+
+        {tab === 'contact' &&
+          <div className="sub">          <Contact />        </div>
         }
 
       </div>

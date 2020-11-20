@@ -1,0 +1,62 @@
+.skills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 1rem;
+}
+
+.btn {		
+    position: relative;	
+    margin: 0.7rem;
+	padding: 0.7rem 1rem;
+	color: var(--color-tertiary);
+	transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);	
+	cursor: pointer;
+}
+
+.btn:before, .btn:after {
+	content: '';
+	position: absolute;	
+	transition: inherit;
+	z-index: -1;
+}
+
+.btn:hover {
+    color: var(--color-primary);
+    font-weight: bold;
+	transition-delay: .4s;
+}
+
+.btn:hover:before {
+	transition-delay: 0s;
+}
+
+.btn:hover:after {
+	background: var(--color-tertiary);
+	transition-delay: .35s;
+}
+
+/* From Right */
+
+.from-right:before, 
+.from-right:after {
+	top: 0;
+	width: 0;
+	height: 100%;
+}
+
+.from-right:before {
+	left: 0;
+	border: 1px solid var(--color-tertiary);
+	border-left: 0;
+	border-right: 0;	
+}
+
+.from-right:after {
+	right: 0;
+}
+
+.from-right:hover:before,
+.from-right:hover:after {
+	width: 100%;
+}

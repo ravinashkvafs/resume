@@ -32,21 +32,21 @@ export default function Journey() {
 
       {experiences.map((d, di) => {
         return (
-          <div style={{ width: '100%', display: 'flex', flexDirection: 'row' }}>
+          <div key={`${di}:${d['organization']}`} style={{ width: '100%', display: 'flex', flexDirection: 'row', marginTop: 10 }}>
 
             <div className="logo-container">
 
-              <img src={d['image'] || ''} className={d['logo'] || ''} />
+              <img src={d['image'] || ''} className={d['logo'] || ''} onContextMenu={(e) => e.preventDefault()} />
 
             </div>
 
-            <div key={`${di}:${d['organization']}`} className="exp-container exp-left">
+            <div className="exp-container exp-left">
 
               <span className="org">{d['organization'] || ''}</span>
 
-              <span className="duration">{d['duration'] || ''}</span>
-
               <span className="designation">{d['designation'] || ''}</span>
+
+              <span className="duration">{d['duration'] || ''}</span>
 
             </div>
 
