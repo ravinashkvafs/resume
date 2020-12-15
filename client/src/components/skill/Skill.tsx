@@ -17,7 +17,7 @@ export default function Skill() {
 
         {skill_set.map((d, di) => {
           return (
-            <div className="btn from-right">{d}</div>
+            <div key={d} className="btn from-right">{d}</div>
           )
         })}
 
