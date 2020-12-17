@@ -37,3 +37,49 @@ export function ManageImageResolutions({ image_obj, element, mode = 'BG' }: any)
     });
 
 }
+
+// MANAGE SCREEN WIDTHS
+const screen_range: any = {
+    'XS': { w_min: 0, w_max: 539, enum: 1 },
+    'SM': { w_min: 540, w_max: 719, enum: 2 },
+    'MD': { w_min: 720, w_max: 959, enum: 3 },
+    'LG': { w_min: 960, w_max: 1139, enum: 4 },
+    'XL': { w_min: 1140, w_max: 99999, enum: 5 },
+};
+
+export function WidthCheck(operator: string, mode: any): boolean {
+    operator = operator ? operator.toUpperCase().trim() : '';
+    mode = mode ? mode.toUpperCase().trim() : '';
+
+    mode = screen_range[mode] ? screen_range[mode] : screen_range['XL'];
+    const w = document.body.clientWidth;
+
+    console.log(operator, mode, w)
+
+    if (operator === 'LT' && w < mode['w_min']) return true;
+    else if (operator === 'GT' && w > mode['w_max']) return true;
+
+    return false;
+}
+
+// MANAGE DIMENSIONS
+let debouncing_timeout: any;
+
+export function ManageDimensions(setDim: any) {
+    clearTimeout(debouncing_timeout);
+
+    debouncing_timeout = setTimeout(() => {
+        const w = document.body.clientWidth;
+        const h = document.body.clientHeight;
+        let sz = 'XL';
+
+        for (let k in screen_range) {
+            if (screen_range[k]['w_min'] <= w && screen_range[k]['w_max'] >= w) {
+                sz = k;
+                break;
+            }
+        }
+
+        setDim({ width: w, height: h, size: sz });
+    }, 200);
+}

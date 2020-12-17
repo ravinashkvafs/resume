@@ -7,11 +7,12 @@
 
 .btn {		
     position: relative;	
-    margin: 0.7rem;
-	padding: 0.7rem 1rem;
+    margin: 0.5rem;
+	padding: 0.5rem 0.8rem;
 	color: var(--color-tertiary);
 	transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);	
 	cursor: pointer;
+	font-size: 0.8rem;
 }
 
 .btn:before, .btn:after {

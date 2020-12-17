@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
+import FlexView from 'react-flexview';
+
 import './App.css';
 import About from './components/about/About';
 import Contact from './components/contact/Contact';
@@ -6,7 +8,7 @@ import Journey from './components/journey/Journey';
 import School from './components/school/School';
 import Skill from './components/skill/Skill';
 
-import { ManageImageResolutions } from './shared/Functions';
+import { ManageImageResolutions, ManageDimensions, WidthCheck } from './shared/Functions';
 import { ImageSet } from './shared/Image-Set';
 
 function Tab({ tab, active, setTab, icon }: any) {
@@ -20,6 +22,7 @@ function Tab({ tab, active, setTab, icon }: any) {
 function App() {
 
   const [tab, setTab] = useState('profile');
+  const [{ }, setDim] = useState({ width: 0, height: 0, size: '' });
 
   useEffect(() => {
     // console.log('useEffect');
@@ -27,16 +30,29 @@ function App() {
     ManageImageResolutions({ image_obj: ImageSet['PicSelf'] || {}, element });
   }, []);
 
+  useLayoutEffect(() => {
+    // console.log('useLayoutEffect');
+    ManageDimensions(setDim);
+
+    // MOUNT
+    window.addEventListener('resize', () => ManageDimensions(setDim));
+
+    // UNMOUNT
+    return () => {
+      window.removeEventListener('resize', () => { });
+    }
+  }, []);
+
   return (
-    <div className="container">
+    <FlexView column={!WidthCheck('gt', 'sm')} className="container">
 
-      <div className="incompatible-section">
+      {/* <div className="incompatible-section">
         Sorry!<br /><br />This requires bigger screen!
-      </div>
+      </div> */}
 
-      <div className="side-menu">
+      <FlexView className="side-menu" column={WidthCheck('gt', 'sm')}>
 
-        <div className="menus">
+        <FlexView column={WidthCheck('gt', 'sm')} className="menus">
 
           <Tab tab={'profile'} active={tab} setTab={setTab} icon={'person'} />
 
@@ -48,15 +64,15 @@ function App() {
 
           <Tab tab={'contact'} active={tab} setTab={setTab} icon={'call'} />
 
-        </div>
+        </FlexView>
 
-        <div className="menu-bottom" onClick={() => null}>
+        <FlexView className="menu-bottom" onClick={() => null}>
 
           <i className={`material-icons menu-icon`}>cloud_download</i>
 
-        </div>
+        </FlexView>
 
-      </div>
+      </FlexView>
 
       <div id="PicSelf" className="pic-section">
 
@@ -98,7 +114,7 @@ function App() {
 
       </div>
 
-    </div>
+    </FlexView>
   );
 
 }
